@@ -1,0 +1,43 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+:root {
+  --col1: #1b2240;
+  --col2: #292f4d;
+  --col3: #ad9bf6;
+  --col4: #8149a6;
+  --col5: #d98bb6;
+}
+body {
+  overflow-x: hidden;
+
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(
+    to right bottom,
+    #292f4d,
+    #292f4d,
+    #292f4d,
+    #292f4d,
+    #292f4d,
+    #30365a,
+    #373e67,
+    #3f4574,
+    #525592,
+    #6866b1,
+    #8077d0,
+    #9b87ef
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: -999;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
