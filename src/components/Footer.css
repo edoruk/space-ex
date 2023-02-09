@@ -2,13 +2,13 @@
   width: 100vw;
   bottom: 0;
   height: 4rem;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: black;
   z-index: 12;
-  margin-top: 2rem;
-  bottom: 0;
+  margin-top: auto;
   padding: 0;
 }
 

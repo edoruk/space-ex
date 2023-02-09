@@ -1,7 +1,8 @@
-import React from "react"
-import "./NavBar.css"
-import { NavLink, useLocation } from "react-router-dom"
-import { motion } from "framer-motion"
+import "./NavBar.css";
+import { useState } from "react";
+
+import { NavLink, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const navLeft = [
   { address: "Home", path: "/" },
@@ -9,13 +10,34 @@ const navLeft = [
   { address: "Link", path: "/link" },
   { address: "Shop", path: "/shop" },
   { address: "Packs", path: "/packs" },
-]
+];
 
 function NavBar() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
+  const [isActive, setIsActive] = useState(false);
+  const navPages = document.getElementsByClassName("nav-left");
+
   return (
-    <main className="nav-bar">
-      <ul className="nav-left">
+    <motion.main
+      className="nav-bar"
+      animate={isActive ? { height: "23rem" } : { height: "4rem" }}
+    >
+      <div className="top-bar">
+        <div
+          className={isActive ? "menu-btn open" : "menu-btn"}
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        >
+          <div className="menu-btn-burger"></div>
+        </div>
+        <p className="logo">Space Ex</p>
+      </div>
+
+      <motion.ul
+        className="nav-left"
+        animate={isActive ? { display: "flex", opacity: 1 } : ""}
+      >
         {navLeft.map((item, index) => {
           return (
             <NavLink to={item.path} key={index} className="nav-link">
@@ -29,11 +51,11 @@ function NavBar() {
                 ></motion.span>
               )}
             </NavLink>
-          )
+          );
         })}
-      </ul>
-    </main>
-  )
+      </motion.ul>
+    </motion.main>
+  );
 }
 
-export default NavBar
+export default NavBar;
