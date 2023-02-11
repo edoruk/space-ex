@@ -1,8 +1,8 @@
-import "./NavBar.css";
-import { useState } from "react";
+import "./NavBar.css"
+import { useState } from "react"
 
-import { NavLink, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { NavLink, useLocation } from "react-router-dom"
+import { delay, motion } from "framer-motion"
 
 const navLeft = [
   { address: "Home", path: "/" },
@@ -10,12 +10,11 @@ const navLeft = [
   { address: "Link", path: "/link" },
   { address: "Shop", path: "/shop" },
   { address: "Packs", path: "/packs" },
-];
+]
 
 function NavBar() {
-  const { pathname } = useLocation();
-  const [isActive, setIsActive] = useState(false);
-  const navPages = document.getElementsByClassName("nav-left");
+  const { pathname } = useLocation()
+  const [isActive, setIsActive] = useState(false)
 
   return (
     <motion.main
@@ -26,7 +25,7 @@ function NavBar() {
         <div
           className={isActive ? "menu-btn open" : "menu-btn"}
           onClick={() => {
-            setIsActive(!isActive);
+            setIsActive(!isActive)
           }}
         >
           <div className="menu-btn-burger"></div>
@@ -40,7 +39,18 @@ function NavBar() {
       >
         {navLeft.map((item, index) => {
           return (
-            <NavLink to={item.path} key={index} className="nav-link">
+            <NavLink
+              to={item.path}
+              key={index}
+              className="nav-link"
+              onClick={
+                window.innerWidth < 511
+                  ? () => {
+                      setIsActive(!isActive)
+                    }
+                  : ""
+              }
+            >
               {item.address}
               {pathname === item.path && (
                 <motion.span
@@ -51,11 +61,11 @@ function NavBar() {
                 ></motion.span>
               )}
             </NavLink>
-          );
+          )
         })}
       </motion.ul>
     </motion.main>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

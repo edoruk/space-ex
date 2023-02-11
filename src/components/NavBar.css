@@ -49,7 +49,9 @@ body {
 
 .logo {
   padding-left: 2rem;
-  color: var(--col2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
 }
 
 .menu-btn {
@@ -170,5 +172,12 @@ body {
   .nav-link:hover {
     background-color: var(--col4);
     color: var(--col3);
+  }
+}
+
+@media (max-width: 589px) and (min-width: 511px) {
+  .logo {
+    font-size: 20px;
+    text-align: center;
   }
 }

@@ -27,6 +27,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  gap: 3rem;
   background-image: linear-gradient(
     to left top,
     #1b224023,
@@ -46,7 +47,6 @@
   line-height: 1.5rem;
   font-weight: 300;
   font-size: 14px;
-  border: 1px solid white;
 }
 
 .about-sec1-h3::first-letter {
@@ -177,19 +177,39 @@
 }
 
 @media (max-width: 700px) and (min-width: 500px) {
-  .about-sec1-h3 {
-    width: 90%;
-    text-indent: 2rem;
-    line-height: 1.5rem;
-    font-size: 16px;
+  .about-sec1 {
+    gap: 3rem;
   }
+
+  .about-sec1-h3 {
+    font-size: 14px;
+    width: 80%;
+  }
+
+  .about-sec1-h3::first-letter {
+    font-size: 46px;
+    letter-spacing: 3px;
+  }
+
   .card {
-    width: 16.5rem;
-    height: 29rem;
-    overflow: hidden;
-    border-radius: 20px;
-    position: relative;
-    border: 2px solid #fff;
-    margin-left: 4rem;
+    margin: 0 auto;
+    width: 20rem;
+    height: 22rem;
+  }
+
+  .card-title {
+    margin: 0;
+    padding-left: 1.5rem;
+    font-size: 25px;
+  }
+  .card-subtitle {
+    font-size: 12px;
+  }
+  .card-submit {
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.8rem;
+    color: #fff;
+    font-size: 1rem;
   }
 }
