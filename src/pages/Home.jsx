@@ -1,7 +1,7 @@
-import "./Home.css";
-import img3 from "../images/img3.jpeg";
-import { motion } from "framer-motion";
-import FooterTab from "../components/FooterTab";
+import "./Home.css"
+import img3 from "../images/img3.jpeg"
+import { motion } from "framer-motion"
+import FooterTab from "../components/FooterTab"
 
 export default function Home() {
   return (
@@ -40,5 +40,5 @@ export default function Home() {
       </section>
       <FooterTab />
     </motion.div>
-  );
+  )
 }

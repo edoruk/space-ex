@@ -45,6 +45,7 @@ h1 {
 .image-container {
   width: 100vw;
   height: 35vw;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -55,7 +56,6 @@ h1 {
 
 .image-container .img-astro {
   width: 35vw;
-  height: 35vw;
   left: 5rem;
   border-radius: 50%;
   --m: radial-gradient(circle farthest-side at right, #000 99%, #0000) 0 100%/46%
@@ -78,6 +78,7 @@ h1 {
   width: 0.2vw;
   height: 35vw;
   border-radius: 2px;
+  position: relative;
   background-image: linear-gradient(
     to left top,
     #292f4d,
